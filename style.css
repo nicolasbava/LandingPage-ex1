@@ -1,0 +1,807 @@
+:root {
+    --clr-primary-100: #F7F7F7;
+    --clr-primary-400: #747d88;
+    --clr-primary-500: #353740;
+    --clr-primary-600: #333333;
+
+    --bg-primary-200: #F7F7F7;
+
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+
+    overflow-wrap: break-word; /* CLAVE para que las palabras se separen en letras para 
+                                encajar en la pantalla */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    max-width: 100%;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+.grid {
+    display: grid;
+    grid-auto-flow: row;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--clr-primary-400);
+}
+
+
+h3 {
+    font-size: 2.625rem;
+    color: var(--clr-primary-600);
+    margin-bottom: .5em;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+img {
+    display: inline-block;
+    max-width: 100%;
+}
+
+/* --------- NAV BAR FIXED ---*/
+
+header a {
+    text-decoration: none;
+    color: var(--clr-primary-600);
+}
+
+header {
+    background: white;
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    color: var(--clr-primary-500);
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--clr-primary-100);
+    width: 100%;
+    padding-top: .5rem;
+
+    transform: scale(1, 0);
+    transition: transform 400ms ease-in-out;
+    transform-origin: top;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    color: var(--clr-primary-500);
+    text-decoration: none;
+    font-size: 1rem;
+
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+
+}
+
+nav a:hover {
+    color: black;
+}
+
+.nav--toggle:checked ~ nav {
+    /* display: block; */
+    transform: scale(1, 1);
+}
+
+.nav--toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 500ms;
+}
+
+.nav--toggle {
+    display: none;
+}
+
+.nav--toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1em;
+}
+
+.nav--toggle-label span,
+.nav--toggle-label span::before,
+.nav--toggle-label span::after {
+    display: block;
+    background: var(--clr-primary-500);
+    height: 2px;
+    width: 1.5rem;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav--toggle-label span::before,
+.nav--toggle-label span::after {
+    content: '';
+    position: absolute;
+} 
+
+.nav--toggle-label span::before {
+    bottom: 5px;
+}
+
+.nav--toggle-label span::after {
+    top: 5px;
+}
+
+/*----------- CREATIVE------- */
+
+.creative {
+    padding-top: 2.4em;
+}
+
+.titulo1 {
+    font-size: 1.375rem;
+    line-height: 1.938rem;
+    color: var(--clr-primary-500);
+    font-weight: 700;
+    margin-bottom: 1.5em;
+
+}
+
+.bl {
+    min-height: 0.0000001vh;
+}
+
+.rj {
+    background: #FCD21D url(imagen0.jpg) ;
+    width: 100vw;
+    background-blend-mode: multiply;
+    background-position-x: 29%;
+}
+
+.creative-cartel {
+    padding-block: min(4.5em, 10%);
+    padding-inline: min(5.8em, 25%);
+}
+
+
+.titulo1 {
+    font-size: 1rem;
+    margin-bottom: 3em;
+    letter-spacing: .2em;
+    font-weight: 500;
+    color: var(--clr-primary-500);
+}
+
+.titulo2--mrgn {
+    margin-bottom: 3.2rem;
+}
+.titulo2 {
+    font-weight: 700;
+    font-size: clamp(2rem, 3.75rem, 5rem);
+    color: var(--clr-primary-100);
+    
+    line-height: 4.875rem;
+}
+
+.creative .creative-cartel p {
+    color: var(--clr-primary-500);
+    margin-bottom: 3em;
+}
+
+.creative--btn {
+    color: var(--clr-primary-100);
+    font-weight: 700;
+    font-size: 1.4rem;
+    float: left;
+    border: 5px white solid;
+    padding: .5em .8em;
+    border-radius: 32rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-bottom: 7rem;
+}   
+
+.creative-cartel p {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 2.25rem;    
+}
+
+.centrado {
+    margin: 0 auto;
+    text-align: center;
+}
+
+/*---- WHAT WE DO ----*/
+
+.what {
+    padding-inline: 10%;
+    margin-bottom: 7em;
+}
+
+.cartel {
+    padding-top: 6em;
+    padding-bottom: 6em;
+    /* establecemos una minwidth en % para cuando sea smart, y un largo maximo del cartel para cuando sea screen*/
+    width: min(98%, 47rem);
+    line-height: 2.1;
+}
+
+.tarjeta {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding-inline: 12%; 
+}
+
+
+.tarjeta img {
+    margin-bottom: 2em;
+}
+
+.trjt_titulo {
+    padding-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.375rem;
+    color: var(--clr-primary-600);
+}
+
+.trjt_icono {
+    min-height: 10em;
+}
+
+
+/*---- VIDEO SECCION ----*/
+
+.bg-video {
+    padding-block: min(.5em, 7em);
+    background-image: linear-gradient(180deg,#ffffff 65%,#fcd21d 65%) !important;
+    padding-inline: 10%;
+}
+
+.video-img {
+    width: min(71.3rem,100%);
+    display: block;
+    outline: 1rem white solid;
+}
+
+
+
+/* GENERATING IDEAS */
+
+.generating {
+    background-color: #FCD21D;    
+    padding-inline: 10%;
+    padding-top: 12%;
+
+}
+
+.generating p {
+    color: var(--clr-primary-500);
+}
+
+.generating h3 {
+    margin-bottom: 1.2em;
+}
+
+.generating--cartel {
+    padding-bottom: 2em;
+}
+
+.ctr h2 {
+    color: var(--clr-primary-100);
+}
+
+.contador {
+    text-align: center;
+    padding-bottom: 5em;
+    min-width: 16vw;
+}
+
+.grid--ctr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3em;
+}
+
+.titulo1--ctr {
+    line-height: 1.938rem;
+    color: var(--clr-primary-500);
+    font-weight: 500;
+    margin-bottom: 1.5em;
+    font-size: 1.rem;
+}
+
+/* WHY WE ARE DIFFERENT */
+
+.why {
+    margin-block: 12%;
+    margin-inline: min(6%, 12%);
+    text-align: left;
+}
+
+.why p {
+    margin-bottom: 2em;
+    padding-top: 2em;
+}
+
+.why--cartel {
+    max-width: 100%;
+    margin-right: 1;
+}
+
+.why img {
+    margin-bottom: 4em;
+    max-width: 100%;
+}
+
+.why--btn {
+    float: left;
+    max-width: 17rem;
+    margin-block: 6%;
+    color: var(--clr-primary-400);
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-inline: auto;
+    border: 5px var(--clr-primary-400) solid;
+    padding: .4em 1em;
+    border-radius: 32rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-bottom: .5rem;
+    text-align: center;
+}
+
+/*--- OUR LASTEST WORK galeria ----*/
+
+.our {
+    background: var(--bg-primary-200);
+    padding-top: 6%;
+    padding-inline: 6%;
+    padding-bottom: 6%;
+    
+}
+
+    /* GALERIA GRID */
+.our img {
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin-bottom: 1em;
+}
+
+.our--cartel {
+    margin-bottom: 3em;
+    padding-inline: min(12%, 20em);
+}
+
+.our--btn {
+    max-width: 12rem;
+    margin-block: 6%;
+    color: var(--clr-primary-400);
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-inline: auto;
+    border: 5px var(--clr-primary-400) solid;
+    padding: .3em;
+    border-radius: 32rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+
+/* SKILLS, OUR SKILLS. 2 columns   */
+
+
+.skills {
+    padding-inline: 12%;
+    padding-top: 12%;
+    margin-bottom: 12%;
+}   
+
+
+.skills--col2 {
+    /* hacer las barras amarillas */
+}
+
+.block {
+    display: inline-block;
+}
+
+.skills--col2 p {
+    padding-bottom: 4em;
+}
+
+/* COMPU */
+
+.compu {
+    background: url(imagen10.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.compu--compu {
+    margin-block: 6% ;
+    padding-inline: 12%;
+}
+
+/* lorem */ 
+
+.lorem {
+    width: min(90%, 36rem);
+    padding-block: 12%;
+}
+
+.lorem p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    font-weight: 500;
+
+}
+
+/* AWARD WINNING */ 
+
+.award {
+    padding-top: 6%;
+    background: #F7F7F7;
+    text-align: left;
+    padding-left: 10%;
+    padding-right: 12%;
+    padding-bottom: 6%;
+}
+
+.award--cartel {
+    width: 100%;
+}
+
+.award h3 {
+    padding-right: 14%;
+    line-height: 1.3;
+    margin-bottom: .8rem;
+}
+
+.award p {
+    line-height: 1.8;
+}
+
+.award--iconos {
+    margin-block: 16%;
+    display: flex;
+    justify-content: center;
+    gap: 25%;
+}
+
+.award--trjt img {
+    margin-bottom: 1.2em;
+}
+
+.award--trjt-titulo {
+    font-weight: 700;
+    color: var(--clr-primary-600);
+    font-size: 1.3rem;
+}
+
+
+.our--img {
+    height: 0vh;
+}
+
+.imagen {
+    background: url(imagen8.jpg) center top no-repeat;
+    height: min(50vh, 100vh);
+    background-size: cover;
+    width: 100%;
+}
+
+/* FROM OUR CLIENTS */
+
+.from--grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.from--cartel {
+    padding-top: 12%;
+    padding-inline: 10%;
+    margin-bottom: 4%;
+}
+
+.from {
+    margin-bottom: 6%;
+}
+
+.from--cartel h3 {
+    padding-inline: 12%;
+    padding-bottom: .5rem;
+}
+
+.from--cartel p {
+    line-height: 1.8;
+}
+
+.cliente {
+    padding-inline: 6%;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.cliente img {
+    max-height: 5.5rem;
+    max-width: 5.5rem;
+    margin-bottom: 1.1rem;
+    margin-right: 2rem;
+}
+
+.izq {
+    text-align: left;
+}
+
+.cliente p {
+    margin-bottom: 1em;
+    line-height: 1.8;
+}
+
+/* FORMULARIO */
+.form {
+    background: #FCD21D;
+    padding-top: 0%;
+    padding-bottom: 12%;
+    background-size: cover;
+    padding-inline: 12%;
+}
+
+.form h3 {
+    margin: 0;
+    padding-inline: 0;
+}
+
+.form--cartel-h3 {
+    margin-bottom: 1.5rem;
+}
+
+.form p {
+    color: var(--clr-primary-600);
+}
+
+.form form {
+    padding-top: 6%;
+    padding-bottom: 12%;
+    max-width: 100%;
+}
+
+.form::placeholder,
+.form input, 
+.form textarea {
+    min-width: 100%;
+    box-shadow: inset 0px -1px 0px 0px rgba(0,0,0,0.18);
+    display: block;
+    min-height: 1rem;
+    color: #353740;
+    background-color: rgba(255,255,255,0);
+    border-width: 0;
+    padding: 1rem;
+    outline: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.form textarea {
+    margin-bottom: 2rem;
+}
+
+.form--btn {
+    color: var(--clr-primary-100);
+    font-weight: 700;
+    font-size: 1.4rem;
+    float: right;
+    border: 5px white solid;
+    padding: .3em 1em;
+    border-radius: 32rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-bottom: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* FOOTER */ 
+
+.footer {
+    padding-block: 3%;
+    background: #171717;
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer ul li {
+    color: var(--clr-primary-100);
+    font-size: 2rem;
+    list-style: none;
+}
+
+/* MEDIA QUERY, complexity */ 
+
+  /* MEDIA QUERY for nav bar*/
+
+@media screen and (min-width: 700px) {
+    .nav--toggle-label {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(400px, 3fr) 1fr;
+    }
+
+    /* what's inside () in gridtemplatecol its the space between the h1 logo and the nav menu */
+
+    header h1 {
+        grid-column: 2 / span 1;
+        /*grid-column: 2 / 4; va a hacer que el logo ocupe desde la linea 2 hasta la 4, y va a quedar centrado. total de lineas = 5. */
+    }
+
+    nav {
+        all: unset; /* it keep every thing we declared in nav previously */
+        grid-column: 3 / 4; 
+        display: flex;   
+        justify-content: flex-end;
+        align-items: center;    
+    }
+
+    nav ul {
+        display: flex;        
+    }
+
+    nav li {
+        margin-left: 1.5em;
+        margin-bottom: 0;
+    }
+
+    nav a {
+        opacity: 1;
+        position: relative;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background: var(--clr-primary-600);
+        position: absolute;
+        top: -.5em;
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 250ms;
+        transform-origin: left;
+    }
+
+    nav a:hover::before {
+        transform: scale(1, 1);
+    }
+}
+
+
+
+@media screen and (min-width: 700px) {
+    .grid {
+        grid-auto-flow: column;
+    }
+
+    .columna {
+        max-width: 50vw;
+    }
+
+    .bl {
+    background: url(imagen1.jpg) top center;
+    background-size: cover;
+    width: 100vw;
+    min-width: 100%;
+    }
+
+    .imagen {
+        background: #ffffff center center no-repeat;
+    }
+
+    .our--img {
+        height: auto;
+        width: 100%;
+    }
+
+    .why--img,
+    .award--cartel       
+     {
+        width: 40vw;        
+    }   
+    
+    .award--cartel{
+        padding-right: 12%;
+    }
+
+    .award--img {
+        margin-right: 0;
+        width: 50vw;
+        float: right;
+        position: relative;
+        top: -12vh;
+    }
+
+    .lorem {
+        margin-bottom: 4em;
+    }
+
+    .why,
+    .--columnas
+     {
+        columns: 2;
+        gap: 8%;
+    }
+
+    .award {
+        columns: 2;
+    }
+
+    .grid--galeria {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 1.2em;
+    }
+
+    .compu img {
+        margin-bottom: -2rem;
+    }
+
+    .imagen {
+        display: none;
+    }
+
+    .cliente {
+        display: flex;
+        padding-inline: 1%;
+        text-align: center;
+        width: 40vw;
+        margin-block: 4%;
+    }
+
+/*
+    .why > * + *  {
+        gap: 3em;
+    } SUPUESTAMENTE ESTO AFECTA AL HIJO DE UN HIJO */
+
+}
