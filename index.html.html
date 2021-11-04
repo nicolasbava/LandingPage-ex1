@@ -9,6 +9,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
     
     <title>Design Agency</title>
 </head>
@@ -35,7 +42,8 @@
             <div class="titulo1">WE ARE A FULL SERVICE</div>
             <div class="titulo2 titulo2--mrgn"> CREATIVE<br><span style="color: var(--clr-primary-600);"> DESIGN AGENCY</span></div>
             </span><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has normal.</p>
-            <div class="creative--btn">LEARN MORE</div>
+            <div class="creative--btn"><span>LEARN MORE <i class="fas fa-angle-right"></i> </span></div>
+            
         </div>
     </div>
     <div class="columna bl">
@@ -55,29 +63,29 @@
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.</p>
             </div>
             <div class="tarjeta centrado">
-                <img src="icono1.png" alt="">
+                <img src="icono2.png" alt="" height="60px">
                 <div class="trjt_titulo">Brand Identity</div>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.</p>
             </div>
             <div class="tarjeta centrado">
-                <img src="icono1.png" alt="">
+                <img src="icono3.png" alt="" height="60px">
                 <div class="trjt_titulo">Web Development</div>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.</p>
             </div>
         </div>
         <div class="grid">
             <div class="tarjeta centrado">
-                <img src="icono1.png" alt="">
+                <img src="icono4.png" alt="">
                 <div class="trjt_titulo">Business Strategy</div>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.</p>
             </div>
             <div class="tarjeta centrado">
-                <img src="icono1.png" alt="">
+                <img src="icono5.png" alt="" height="60px">
                 <div class="trjt_titulo">Web Design</div>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.</p>
             </div>
             <div class="tarjeta centrado">
-                <img src="icono1.png" alt="">
+                <img src="icono6.png" alt="" height="60px">
                 <div class="trjt_titulo">Photography</div>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.</p>
             </div>
@@ -85,9 +93,8 @@
     </div>    
 </section>
 
-<section class="video centrado bg-video">
-    
-        <img src="imgvideo.png" class="video-img centrado" alt="">
+<section class="video centrado bg-video">    
+        <img src="imgvideo.png" class="video-img centrado" alt="">     
     
 </section>
 
@@ -99,21 +106,21 @@
 
     <div class="grid--ctr ctr">
         <div class="contador">
-            <div class="titulo2">200</div>
+            <div class="titulo2 counter" data-target="200">0</div>
             <div class="titulo1--ctr">PROJECTS</div>
         </div>
         <div class="contador">
-            <div class="titulo2">54</div>
+            <div class="titulo2 counter" data-target="54">0</div>
             <div class="titulo1--ctr">SATISFIED CLIENTS</div>
         </div>
     
         
             <div class="contador">
-                <div class="titulo2">12</div>
+                <div class="titulo2 counter" data-target="12">0</div>
                 <div class="titulo1--ctr">ONGOING PROJECTS</div>
             </div>
             <div class="contador">
-                <div class="titulo2">906</div>
+                <div class="titulo2 counter" data-target="906">0</div>
                 <div class="titulo1--ctr">CUPS OF COFFE</div>
             </div>
         </div>
@@ -125,7 +132,10 @@
         <div class="why--cartel">
             <h3>WHY WE ARE DIFFERENT</h3>            
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make point of using a type specimen book.</p>
-            <div class="why--btn">LEARN MORE</div>
+            <button class="why--btn btn btn-effect-14">
+                <span> LEARN MORE <i class="fas fa-angle-right"></i> </span>
+            </button>
+            <!-- <div class="why--btn">LEARN MORE</div> -->
         </div>    
 </section>
 
@@ -148,7 +158,10 @@
             </div>
         </div>
     </div>
-    <div class="our--btn">SEE MORE</div>
+    <button class="our--btn why--btn btn btn-effect-15">
+        <span> SEE MORE <i class="fas fa-angle-down"></i> </span>
+    </button>
+    <!-- <div class="our--btn">SEE MORE</div> -->
 </section>
 
 <section class="skills">
@@ -258,6 +271,7 @@
         
     </div>
 </footer>
+<script src="script.js"></script>
 
 </body>
 </html>
