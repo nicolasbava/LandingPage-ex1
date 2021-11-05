@@ -5,14 +5,15 @@ const counters = document.querySelectorAll('.counter');
         const updateCount = () => {
             const target = +counter.getAttribute('data-target');
             const count = +counter.innerText;
+            const speed1 = +counter.getAttribute('speed');
 
-            const inc = target / target;
+            const inc = target / speed1 ;
 
             console.log(count);
 
             if (count < target) {
                 counter.innerText = Math.ceil(count + inc);
-                setTimeout(updateCount, 1);
+                setTimeout(updateCount, 4);
             } else {
                 count.innerText = target;
             }

@@ -3,6 +3,7 @@
     --clr-primary-400: #747d88;
     --clr-primary-500: #353740;
     --clr-primary-600: #333333;
+    --clr-primary-y: #FCD21E;
 
     --bg-primary-200: #F7F7F7;
 
@@ -16,6 +17,8 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    overflow-x: hidden;
+    overflow-y: visible;
 }
 
 html {
@@ -68,6 +71,7 @@ header {
     position: fixed;
     z-index: 999;
     width: 100%;
+    box-shadow: 0 7px 10px 0px rgba(0,0,0,0.1);
     color: var(--clr-primary-500);
 }
 
@@ -83,6 +87,7 @@ nav {
     transform: scale(1, 0);
     transition: transform 400ms ease-in-out;
     transform-origin: top;
+
 }
 
 nav ul {
@@ -182,11 +187,11 @@ nav a:hover {
 }
 
 .rj {
-    background: #FCD21D url(imagen0.jpg) ;
+    background: #FCD21D url(imagen0.jpg) no-repeat center center ;
     width: 100vw;
     background-blend-mode: multiply;
-    background-position-x: 29%;
-    background-position-y: 16px;
+    background-position-x: 24%;
+    background-position-y: px;
 }
 
 .creative-cartel {
@@ -197,14 +202,14 @@ nav a:hover {
 
 .titulo1 {
     font-size: 1rem;
-    margin-bottom: 3em;
+    margin-bottom: 1em;
     letter-spacing: .2em;
     font-weight: 500;
     color: var(--clr-primary-500);
 }
 
 .titulo2--mrgn {
-    margin-bottom: 3.2rem;
+    margin-bottom: .5rem;
 }
 .titulo2 {
     font-weight: 700;
@@ -216,7 +221,7 @@ nav a:hover {
 
 .creative .creative-cartel p {
     color: var(--clr-primary-500);
-    margin-bottom: 3em;
+    margin-bottom: 2em;
 }
 
 /* CREATIVE BUTTON */
@@ -231,7 +236,7 @@ nav a:hover {
     border-radius: 32rem;
     letter-spacing: 2px;
     cursor: pointer;
-    margin-bottom: 7rem;
+    margin-bottom: -1.2em;
     position: relative;
 }   
 
@@ -341,10 +346,18 @@ nav a:hover {
 
 .generating h3 {
     margin-bottom: 1.2em;
+
 }
 
 .generating--cartel {
     padding-bottom: 2em;
+    max-width: 50em;
+
+}
+
+.generating--cartel-h3 {
+    max-width: 16em;
+    margin: 0 auto;
 }
 
 .ctr h2 {
@@ -396,6 +409,7 @@ nav a:hover {
 }
 
 .why--btn {
+    background: transparent;
     float: left;
     max-width: 20rem;
     margin-block: 6%;
@@ -464,7 +478,7 @@ nav a:hover {
     padding-inline: min(12%, 20em);
 }
 
-.our--btn {
+.our--btn {    
     max-width: 12rem;
     margin-block: 6%;
     color: var(--clr-primary-400);
@@ -473,11 +487,21 @@ nav a:hover {
     margin-inline: auto;
     border: 5px var(--clr-primary-400) solid;
     padding: .3em;
-    border-radius: 32rem;
+    /* border-radius: 32rem; */
     letter-spacing: 2px;
     cursor: pointer;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
     text-align: center;
+    display: block;
+    text-align: center;
+    transition: all .5s ease
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -4rem;
 }
 
 /* START WHY BUTTON */
@@ -485,24 +509,24 @@ nav a:hover {
 .btn-effect-15 span {
     position: relative;
     /* border: 1px solid red; */
-    transition: .5s;
+    transition: all 0.5s;
 }
 
 .btn-effect-15 span i {
     position: absolute;
-    right: -1.5rem;
-    top: .23rem;
+    left: 3.8rem;
+    top: 0;
     opacity: 0;
-    transition: all -5s ease;
+    transition: all .5s ease;
 }
 
-btn-effect-15:hover span {
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
+.our--btn:hover {
+    padding-bottom: 1.3rem;
+    /* border-radius: 30%; */
 }
 
-btn-effect-15:hover i {
-    right: 0;
+.btn-effect-15:hover i {
+    top: 1.8rem;
     opacity: 1;
 }
 
@@ -512,15 +536,97 @@ btn-effect-15:hover i {
 
 
 .skills {
-    padding-inline: 12%;
-    padding-top: 12%;
+    padding-inline: 10%;
+    padding-top: 8%;
     margin-bottom: 12%;
 }   
 
-
-.skills--col2 {
-    /* hacer las barras amarillas */
+.skills h3 {
+    margin-bottom: .8rem;
 }
+
+.col {
+    max-width: 95%;
+}
+
+.col p {
+    letter-spacing: ;
+}
+
+/* barras animacion START */
+.col2 {
+    width: 500px;    
+}
+
+.box {
+    width: 35rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;        
+}
+
+.box h5 {
+    margin-bottom: 3px;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-left: .1em;
+    color: var(--clr-primary-400);
+}
+
+.box .bar {
+    height: 25px;
+}
+
+
+.bar::before {
+    content: "";
+    background-color: var(--clr-primary-y);
+    display: inline-block;
+    padding: 13px;
+    border-radius: inherit;
+    animation: load 3s 0s;
+    -webkit-animation:  load 3s 0s;
+    -moz-animation:  load 3s 0s;
+    -o-animation:  load 3s 0s;
+    transition: all 3s;
+    margin-bottom: 1.8rem;
+}
+
+.bar.bar1::before {
+    width: calc(95% - 10px);
+}
+.bar.bar2::before {
+    width: calc(66% - 10px);
+}
+.bar.bar3::before {
+    width: calc(75% - 10px);
+}
+
+@keyframes load {
+    from {
+        width: 0%;
+    }
+}
+
+@-webkit-keyframes load {
+    from {
+        width: 0%;
+    }
+}
+
+@-moz-keyframes load {
+    from {
+        width: 0%;
+    }
+}
+
+@-o-keyframes load {
+    from {
+        width: 0%;
+    }
+}
+
+/* barras animacion END */
 
 .block {
     display: inline-block;
@@ -535,6 +641,7 @@ btn-effect-15:hover i {
 .compu {
     background: url(imagen10.jpg) no-repeat center center;
     background-size: cover;
+    overflow-x: visible;
 }
 
 .compu--compu {
@@ -547,6 +654,7 @@ btn-effect-15:hover i {
 .lorem {
     width: min(90%, 36rem);
     padding-block: 12%;
+    z-index: 1;
 }
 
 .lorem p {
@@ -624,6 +732,11 @@ btn-effect-15:hover i {
     margin-bottom: 4%;
 }
 
+.from--cartel p {
+    max-width: 45rem;
+    margin: 0 auto;
+}
+
 .from {
     margin-bottom: 6%;
 }
@@ -644,8 +757,8 @@ btn-effect-15:hover i {
 }
 
 .cliente img {
-    max-height: 5.5rem;
-    max-width: 5.5rem;
+    max-height: 6rem;
+    width: 18em;
     margin-bottom: 1.1rem;
     margin-right: 2rem;
 }
@@ -683,7 +796,6 @@ btn-effect-15:hover i {
 
 .form form {
     padding-top: 6%;
-    padding-bottom: 12%;
     max-width: 100%;
 }
 
@@ -720,6 +832,31 @@ btn-effect-15:hover i {
     cursor: pointer;
     margin-bottom: 1.2rem;
     margin-top: 1rem;
+    background: transparent;
+}
+
+/* Button effect #16 */
+.btn-effect-16 span {
+    position: relative;
+    /* border: 1px solid red; */
+    transition: .5s;
+}
+
+.btn-effect-16 span i {
+    position: absolute;
+    right: -1.5rem;
+    top: 0.23rem;
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+.btn-effect-16:hover span {
+    padding-right: 1.5rem;
+}
+
+.btn-effect-16:hover i {
+    right: 0;
+    opacity: 1;
 }
 
 /* FOOTER */ 
@@ -740,6 +877,10 @@ footer ul li {
     font-size: 2rem;
     list-style: none;
 }
+
+
+
+
 
 /* MEDIA QUERY, complexity */ 
 
@@ -885,6 +1026,11 @@ footer ul li {
         text-align: center;
         width: 40vw;
         margin-block: 4%;
+    }
+
+    .cliente img {
+        width: 16rem;
+
     }
 
 /*
